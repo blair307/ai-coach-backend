@@ -1,3 +1,12 @@
+require('dotenv').config();
+
+// DEBUG: Let's see what Railway is actually giving us
+console.log("🔍 DEBUG INFO:");
+console.log("OPENAI_API_KEY exists:", !!process.env.OPENAI_API_KEY);
+console.log("OPENAI_API_KEY length:", process.env.OPENAI_API_KEY?.length || 0);
+console.log("OPENAI_API_KEY first 10 chars:", process.env.OPENAI_API_KEY?.substring(0, 10) || "MISSING");
+console.log("All env vars:", Object.keys(process.env).filter(key => key.includes('OPENAI')));
+
 // Simple AI Coach Backend Server
 const express = require('express');
 const cors = require('cors');
